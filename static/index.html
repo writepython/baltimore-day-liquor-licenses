@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="licensesApp">
+<head>
+<title>One Day Liquor Licenses - City of Balitimore - 2013 & 2014</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+<h1>One Day Liquor Licenses - City of Balitimore - 2013 & 2014</h1>
+<div ng-controller="LicensesCtrl">
+
+<h4>Search for licenses: <input ng-model="search"></h4>
+
+<table class="table table-bordered table-striped">
+<thead>
+<tr>
+    <th>Recipient</th><th>Event</th><th>Address</th><th>Zip</th><th>License</th><th>Fee</th><th>Issue Date</th><th>Start Date</th><th>End Date</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-class-odd="'odd'" ng-repeat="license in licenses | filter:search">
+    <td>{{license[4]}}</td>
+    <td>{{license[5]}}</td>
+    <td>{{license[7]}}</td>
+    <td>{{license[8]}}</td>
+    <td>{{license[6]}}</td>
+    <td>{{license[3]}}</td>
+    <td>{{license[0]}}</td>
+    <td>{{license[1]}}</td>
+    <td>{{license[2]}}</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+</body>
+</html>
+
